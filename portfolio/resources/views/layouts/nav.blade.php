@@ -7,16 +7,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">ROCH D'AMOUR</a>
+          <a class="navbar-brand" href="/">ROCH D'AMOUR</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="work.html">Projets</a></li>
-            <li><a href="about.html">Catégories</a></li>
+            <li><a href="/projets">Projets</a></li>
+            <li><a href="/categories">Catégories</a></li>
             <!--  
               <li><a href="blog.html">Blog</a></li> 
             -->
-            <li><a href="contact.html">Profile</a></li>
+            <li><a href="/profile">Profile</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

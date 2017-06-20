@@ -18,9 +18,9 @@ class CreateProjetsTable extends Migration
             $table->integer('user_id');
             $table->integer('cadre_id');
             $table->integer('categorie_id');
-            $table->string('nom','100');
+            $table->string('name','100');
             $table->longText('description')->nullable();
-            $table->string('photo','100')->nullable();
+            $table->string('picture','100')->nullable();
             $table->string('lien_github')->nullable();
 
             $table->timestamps();

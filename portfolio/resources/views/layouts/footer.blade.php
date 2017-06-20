@@ -4,18 +4,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4">
-				<h4>Ou me retrouver</h4>
+				<h4></h4>
 				<p>
 					
 				</p>
 			</div><!-- /col-lg-4 -->
 
 			<div class="col-lg-4">
-				<h4>My Links</h4>
+				<h4>Autres sites</h4>
 				<p>
-					<a href="#">Dribbble</a><br/>
-					<a href="#">Twitter</a><br/>
-					<a href="#">Facebook</a>
+					<a href="#">LinkedIn</a><br/>
+					<a href="#">Github</a><br/>
 				</p>
 			</div><!-- /col-lg-4 -->
 

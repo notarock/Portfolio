@@ -16,9 +16,9 @@ class CreateChapitresTable extends Migration
         Schema::create('chapitres', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('projet_id');
-            $table->string('text_haut');
-            $table->string('photo','100')->nullable();
-            $table->string('text_bas');
+            $table->text('textUp');
+            $table->string('picture','100')->nullable();
+            $table->text('textDown');
             $table->timestamps();
         });
     }

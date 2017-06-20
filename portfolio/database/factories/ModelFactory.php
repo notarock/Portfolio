@@ -19,7 +19,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => "Roch D'Amour",
-        'photo' => 'user_placeholder',
+        'photo' => 'user_placeholder.jpg',
         'email' => 'roch@roch.com',
         'password' => $password ?: $password = bcrypt('secret'),
         'description' => $faker->text,
@@ -38,9 +38,9 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker){
 		'user_id' => 1,
 		'cadre_id' => rand(1,App\Cadre::count()),
 		'categorie_id' => rand(1,App\Cadre::count()),
-		'nom' => $faker->sentence(rand(1,6)),
+		'name' => $faker->sentence(rand(1,6)),
 		'description' => $faker->text,
-		'photo' => 'projet_placeholder',
+		'picture' => 'projet_placeholder.jpg',
 		'lien_github' => $faker->domainName,
 	];
 
@@ -53,7 +53,7 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker){
 $factory->define(App\Cadre::class, function(Faker\Generator $faker){
 
 	return [
-		'nom' => $faker->colorName,
+		'name' => $faker->colorName,
 		'description' => $faker->paragraph,
 	];
 
@@ -63,7 +63,7 @@ $factory->define(App\Cadre::class, function(Faker\Generator $faker){
 $factory->define(App\Categorie::class, function(Faker\Generator $faker){
 
 	return [
-		'nom' => $faker->colorName,
+		'name' => $faker->colorName,
 		'description' => $faker->paragraph,
 	];
 
@@ -74,9 +74,9 @@ $factory->define(App\Chapitre::class, function(Faker\Generator $faker){
 
 	return [
 		'projet_id' => rand(1,App\Projet::count()),
-		'text_haut' => $faker->paragraph,
-		'photo' => 'chapitre_placeholder',
-		'text_bas' => $faker->paragraph,
+		'textUp' => $faker->paragraph,
+		'picture' => 'chapitre_placeholder.jpg',
+		'textDown' => $faker->paragraph,
 	];
 
 });
