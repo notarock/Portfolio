@@ -13,4 +13,24 @@
 
 Auth::routes();
 
+
+
+/*
+ *
+ *  Home Controller Routes
+ *
+ */
+
 Route::get('/', 'HomeController@index')->name('homepage');
+
+
+/*
+ *
+ *  Projet Controller Routes
+ *
+ */ 
+
+Route::get('/projets/{projet}', 'ProjetController@show');
+
+
+

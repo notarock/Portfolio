@@ -18,11 +18,11 @@ class Projet extends Model
 
     public function cadre()
     {
-    	return $this->hasOne(Cadre::class);
+    	return $this->belongsTo(Cadre::class);
     }
 
     public function categorie()
     {
-    	return $this->hasOne(Categorie::class);
+    	return $this->belongsTo(Categorie::class);
     }
 }

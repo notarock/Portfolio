@@ -48,7 +48,7 @@ p {
 
 /* Links */
 a {
-    color: #1abc9c;
+    color: #2aa198;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -95,7 +95,7 @@ a:after {
 }
 
 .navbar-inverse {
-	background-color: #77dd77;
+	background-color: #073642;
 	border-color: #008208;
 }
 
@@ -149,7 +149,9 @@ a:after {
 
 
 #footer {
-	background-color: #2f2f2f;
+
+	background-color: #073642;
+	border-color: #008208;
 	padding-top: 50px;
 	padding-bottom: 50px; 
 }
@@ -239,4 +241,14 @@ bt {
 .glyphicon {
 	font-size: 40px;
 	color: #1abc9c;
+}
+
+.projet-thumbnail {
+	width: 400px;
+	height:auto;
+}
+
+.projet-picture {
+	width:700px;
+	height:auto;
 }
