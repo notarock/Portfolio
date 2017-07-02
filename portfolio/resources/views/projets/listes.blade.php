@@ -9,18 +9,20 @@
 	@else
 
 	<div class="container pt">
-		<div class="row mt centered">	
+		@foreach($lstProjets->chunk(3) as $ligne)
+			<div class="row mt centered">	
 
-			@foreach($lstProjets as $projet)
+				@foreach($ligne as $projet)
 
-			<div class="col-lg-4">
-				<a class="zoom green" href="/projets/{{$projet->id}}"><img class="img-responsive" src="/img/projets/{{ $projet->picture }}" alt="" /></a>
-				<p>{{$projet->name}}</p>
+				<div class="col-lg-4">
+					<a class="zoom green" href="/projets/{{$projet->id}}"><img class="img-responsive" src="/img/projets/{{ $projet->picture }}" alt="" /></a>
+					<p>{{$projet->name}}</p>
+				</div>
+
+				@endforeach
+
 			</div>
-
-			@endforeach
-
-		</div><!-- /row -->
+		@endforeach
 	</div><!-- /container -->
 	
 	@endif

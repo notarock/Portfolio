@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('content')
@@ -14,6 +15,23 @@
 		</div><!-- /row -->
 	</div> <!-- /container -->
 </div><!-- /ww -->
+
+<div class="container pt">
+	<div class="row mt">
+		<div class="col-lg-6 col-lg-offset-3 centered">
+			<h3>MES PROJETS</h3>
+			<hr>	
+			<p>
+			Parmis la liste, vous retrouverez les projets sur lesquels j'ai travaillé.
+			</p>
+			<p>
+			Vous pouvez aussi explorer les différentes catégories à partir du menu de droite.
+			</p>
+		</div>	
+	</div>
+</div>
+
+
 
 @include("projets.listes", ['lstProjets' => $lstProjets ])
 
