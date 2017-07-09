@@ -1,5 +1,4 @@
-
-
+ 
 	@if($lstProjets->isEmpty())
 
 	<div class="row mt centered">	

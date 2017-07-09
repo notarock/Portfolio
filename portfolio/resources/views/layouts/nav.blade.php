@@ -16,16 +16,16 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégories<b class=""></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="/categories">Toutes les catégories</a></li>
-		
-		 			<li><a href="#">Another action</a></li>
+					@foreach($DDcategories as $categorie)
+				
+	 				<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}} ({{$categorie->total}})</a></li>
 
+					@endforeach
 
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
+					<li><a href="/categories/index">Plus...</a></li>
 				</ul>
 			</li>
-
+			
 			<li><a href="/profile">Profile</a></li>
 		</ul>
 	</div><!--/.nav-collapse -->
