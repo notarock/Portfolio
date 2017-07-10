@@ -11,9 +11,9 @@ class ProjetsTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(App\Projet::class, 10)->create()->each(function ($projet) {
+    	factory(App\Projet::class, 60)->create()->each(function ($projet) {
 
-    		for ($x = 0; $x <= 3; $x++) {
+    		for ($x = 0; $x <= rand(3,7); $x++) {
     			$projet->chapitres()->save(factory(App\Chapitre::class)->make());
     		}
 

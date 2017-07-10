@@ -6,8 +6,6 @@
 	</div><!-- /row -->
 
 	@else
-
-	<div class="container pt">
 		@foreach($lstProjets->chunk(3) as $ligne)
 			<div class="row mt centered">	
 
@@ -20,9 +18,7 @@
 
 				@endforeach
 
-			</div>
+			</div>	
 		@endforeach
-	</div><!-- /container -->
-	
 	@endif
 

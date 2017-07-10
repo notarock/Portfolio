@@ -11,6 +11,6 @@ class CadresTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(App\Cadre::class, 3)->create();
+    	factory(App\Cadre::class, 10)->create();
     }
 }

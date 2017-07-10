@@ -18,7 +18,7 @@
 				<ul class="dropdown-menu">
 					@foreach($DDcategories as $categorie)
 				
-	 				<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}} ({{$categorie->total}})</a></li>
+	 				<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}} ({{$categorie->total()}})</a></li>
 
 					@endforeach
 

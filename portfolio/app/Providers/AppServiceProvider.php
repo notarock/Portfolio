@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use Carbon\Carbon;
+use App\Categorie;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 	    Carbon::setLocale('fr');
-
+	    view()->composer('layouts.nav', function ($view){
+		    $view->with('DDcategories',Categorie::DDcategories());
+	    });
     }
 
     /**
@@ -25,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+       
     }
 }

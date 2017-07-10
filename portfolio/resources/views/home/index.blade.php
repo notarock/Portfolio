@@ -15,6 +15,8 @@
 	</div> <!-- /container -->
 </div><!-- /ww -->
 
-@include("projets.listes", ['lstProjets' => $lstProjets ])
+<div class="container">
+	@include("projets.listes", ['lstProjets' => $lstProjets ])
+</div>
 
 @endsection

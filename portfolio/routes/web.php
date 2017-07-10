@@ -13,8 +13,6 @@
 
 Auth::routes();
 
-
-
 /*
  *
  *  Home Controller Routes
@@ -32,5 +30,5 @@ Route::get('/', 'HomeController@index')->name('homepage');
 
 Route::get('/projets/{projet}', 'ProjetController@show');
 
-
+Route::get('/projets', 'ProjetController@index');
 

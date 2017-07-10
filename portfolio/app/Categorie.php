@@ -10,15 +10,17 @@ class Categorie extends Model
     	public function projets()
     	{
     		return $this->hasMany(Projet::class);
-   	 }
+   	}
+
+	public function total()
+	{
+		return $this->projets->count();	
+	}
 
 	public static function DDcategories()
-	{
-		$result =  db::raw('SELECT projets.categorie_id id, categories.name name, count(*) total
-					from projets inner join categories on projets.categorie_id = categories.id
-					group by id,name order by total DESC');
-	
-		return static::modelsFromRawResults($result);
-	}		
-
+	{	
+		return Categorie::get()->sortByDesc(function($categorie){
+    			return $categorie->projets->count();
+		})->take(6);
+	}
 }
