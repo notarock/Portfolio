@@ -65,6 +65,7 @@ $factory->define(App\Categorie::class, function(Faker\Generator $faker){
 	return [
 		'name' => $faker->colorName,
 		'description' => $faker->paragraph,
+		'picture' => 'categorie_placeholder.jpg',
 	];
 
 });
