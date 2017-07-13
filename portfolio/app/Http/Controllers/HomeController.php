@@ -26,8 +26,16 @@ class HomeController extends Controller
     public function index()
     {
 
-        $lstProjets = Projet::orderBy('updated_at','DESC')->take(6)->get();
+        $lstProjets = Projet::orderBy('updated_at','DESC')->take(3)->get();
 
         return view('home.index', compact('lstProjets'));
+    }
+
+
+    public function profile()
+    {
+	$profile = Profile::first();
+
+	return view('profiles.show', compact ('profile'));
     }
 }
