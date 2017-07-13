@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Projet;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -34,7 +35,7 @@ class HomeController extends Controller
 
     public function profile()
     {
-	$profile = Profile::first();
+	$profile = User::first();
 
 	return view('profiles.show', compact ('profile'));
     }

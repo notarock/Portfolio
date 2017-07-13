@@ -26,7 +26,7 @@
 				</ul>
 			</li>
 			
-			<li><a href="/profile">Profile</a></li>
+			<li><a href="/profile">À Propos</a></li>
 		</ul>
 	</div><!--/.nav-collapse -->
 			</div>
