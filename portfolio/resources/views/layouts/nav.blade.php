@@ -22,7 +22,7 @@
 
 					@endforeach
 
-					<li><a href="/categories/index">Plus...</a></li>
+					<li><a href="/categories">Plus...</a></li>
 				</ul>
 			</li>
 			
