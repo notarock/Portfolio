@@ -33,8 +33,6 @@ Route::get('/projets/{projet}', 'ProjetController@show');
 
 Route::get('/projets', 'ProjetController@index');
 
-
-
 /*
  *
  *  Categorie Controller Routes

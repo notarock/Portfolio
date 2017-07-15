@@ -8,21 +8,21 @@ class Projet extends Model
 {
     public function user()
     {
-    	return $this->hasOne(User::class);
+	    return $this->hasOne(User::class);
     }
 
     public function chapitres()
     {
-    	return $this->hasMany(Chapitre::class);
+	    return $this->hasMany(Chapitre::class);
     }
 
     public function cadre()
     {
-    	return $this->belongsTo(Cadre::class);
+	    return $this->belongsTo(Cadre::class);
     }
 
     public function categorie()
     {
-    	return $this->belongsTo(Categorie::class);
+	    return $this->belongsTo(Categorie::class);
     }
 }

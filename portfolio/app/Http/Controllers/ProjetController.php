@@ -18,6 +18,7 @@ class ProjetController extends Controller
 	
 	public function index()
 	{	
+		
         	$lstProjets = Projet::orderBy('updated_at','DESC')->paginate(9);
 		return view('projets.index', compact('lstProjets'));
 	}	

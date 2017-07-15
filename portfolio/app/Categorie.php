@@ -21,6 +21,6 @@ class Categorie extends Model
 	{	
 		return Categorie::get()->sortByDesc(function($categorie){
     			return $categorie->projets->count();
-		})->take(6);
+		})->take(3);
 	}
 }

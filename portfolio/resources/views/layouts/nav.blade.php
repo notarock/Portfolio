@@ -12,20 +12,17 @@
 	<div class="navbar-collapse collapse">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/projets">Projets</a></li>
-
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégories<b class=""></b></a>
-				<ul class="dropdown-menu">
-					@foreach($DDcategories as $categorie)
-				
-	 				<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}} ({{$categorie->total()}})</a></li>
-
-					@endforeach
-
-					<li><a href="/categories">Plus...</a></li>
-				</ul>
-			</li>
 			
+			@foreach($DDcategories as $categorie)
+
+			<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}}</a></li>
+		
+			@endforeach
+		
+			<li><a href="/categories">Catégories</a></li>					
+
+			<li><a href="/blog">Blog</a></li>
+
 			<li><a href="/profile">À Propos</a></li>
 		</ul>
 	</div><!--/.nav-collapse -->
