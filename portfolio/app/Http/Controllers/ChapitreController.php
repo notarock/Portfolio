@@ -1,10 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Chapitre;
 
 use Illuminate\Http\Request;
 
 class ChapitreController extends Controller
 {
-	factory(App\Chapitre::class, 10)->create();
+
+	public function show (Chapitre $chapitre){
+
+		return view('chapitres.show', compact ('chapitre'));
+		
+	}
 }
