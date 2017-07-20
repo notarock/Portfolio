@@ -16,9 +16,10 @@
 				<h4>Autres sites</h4>
 
 				<p>
-					<a href="https://www.linkedin.com/in/694958129/">LinkedIn</a><br/>
-					<a href="https://github.com/notarock">Github</a><br/>
-					<a href="https://www.youtube.com/channel/UCQjr8-APqcSDEzaUp5JUYXQ">Youtube</a><br/>	
+
+					<a href="{{$liens["lien_linkedin"]}}">LinkedIn</a><br/>
+					<a href="{{$liens["lien_github"]}}">Github</a><br/>
+					<a href="{{$liens["lien_youtube"]}}">Youtube</a><br/>	
 				</p>
 
 			</div><!-- /col-lg-4 -->

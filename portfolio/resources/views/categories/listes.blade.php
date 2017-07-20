@@ -1,4 +1,4 @@
- 
+
 	@if($lstCategories->isEmpty())
 
 	<div class="row mt centered">	

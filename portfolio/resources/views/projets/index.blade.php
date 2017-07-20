@@ -14,9 +14,9 @@
 			<div class="row col-lg-8 col-lg-offset-2 centered">{{ $lstProjets->links() }}</div>
 
 			@include("projets.listes", ['lstProjets' => $lstProjets ])
-	
+
 			<div class="row col-lg-8 col-lg-offset-2 centered">{{ $lstProjets->links() }}</div>
-	
+
 
 
 	</div> <!-- /container -->

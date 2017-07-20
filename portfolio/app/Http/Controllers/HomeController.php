@@ -39,4 +39,10 @@ class HomeController extends Controller
 
 	return view('profiles.show', compact ('profile'));
     }
+
+	public function test()
+	{
+		dd(User::coordonnees());
+	}
+
 }

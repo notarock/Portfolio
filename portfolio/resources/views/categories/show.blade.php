@@ -4,7 +4,7 @@
 
 
 	<!-- +++++ Projects Section +++++ -->
-	
+
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
@@ -27,9 +27,9 @@
 		@include("projets.listes", ['lstProjets' => $lstProjets ])
 
 	<div class="row col-lg-8 col-lg-offset-2 centered">{{ $lstProjets->links() }}</div>
-	
+
 	</div><!-- /container -->
-	
+
 
 
 

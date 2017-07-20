@@ -7,10 +7,10 @@ use App\Projet;
 use App\Categorie;
 class Categorie extends Model
 {
-    	public function projets()
-    	{
-    		return $this->hasMany(Projet::class);
-   	}
+	public function projets()
+	{
+		return $this->hasMany(Projet::class);
+	}
 
 	public function total()
 	{
@@ -20,7 +20,7 @@ class Categorie extends Model
 	public static function DDcategories()
 	{	
 		return Categorie::get()->sortByDesc(function($categorie){
-    			return $categorie->projets->count();
+			return $categorie->projets->count();
 		})->take(3);
 	}
 }

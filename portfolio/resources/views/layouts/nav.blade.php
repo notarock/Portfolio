@@ -12,19 +12,19 @@
 	<div class="navbar-collapse collapse">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="/projets">Projets</a></li>
-			
+
 			@foreach($DDcategories as $categorie)
 
 			<li><a href="/categories/{{$categorie->id}}">{{$categorie->name}}</a></li>
-		
+
 			@endforeach
-		
+
 			<li><a href="/categories">Catégories</a></li>					
 
-			<li><a href="/blog">Blog</a></li>
+			<li><a href="/blogs">Blog</a></li>
 
 			<li><a href="/profile">À Propos</a></li>
 		</ul>
 	</div><!--/.nav-collapse -->
-			</div>
 		</div>
+	</div>

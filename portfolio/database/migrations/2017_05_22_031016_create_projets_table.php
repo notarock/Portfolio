@@ -6,34 +6,34 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProjetsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('projets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('cadre_id');
-            $table->integer('categorie_id');
-            $table->string('name','100');
-            $table->longText('description')->nullable();
-            $table->string('picture','100')->nullable();
-            $table->string('lien_github')->nullable();
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('projets', function (Blueprint $table) {
+			$table->increments('id');
+			$table->integer('user_id');
+			$table->integer('cadre_id');
+			$table->integer('categorie_id');
+			$table->string('name','100');
+			$table->longText('description')->nullable();
+			$table->string('picture','100')->nullable();
+			$table->string('lien_github')->nullable();
 
-            $table->timestamps();
-        });
-    }
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('projets');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('projets');
+	}
 }

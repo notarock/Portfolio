@@ -14,9 +14,9 @@
 			<div class="row col-lg-8 col-lg-offset-2 centered">{{ $lstCategories->links() }}</div>
 
 			@include("categories.listes", ['lstCategories' => $lstCategories ])
-	
+
 			<div class="row col-lg-8 col-lg-offset-2 centered">{{ $lstCategories->links() }}</div>
-	
+
 
 
 	</div> <!-- /container -->
