@@ -24,6 +24,10 @@
 			<li><a href="/blogs">Blog</a></li>
 
 			<li><a href="/profile">À Propos</a></li>
+			
+			@if(Auth::check())
+			<li><a href="/logout">Logout</a></li>
+			@endif
 		</ul>
 	</div><!--/.nav-collapse -->
 		</div>
