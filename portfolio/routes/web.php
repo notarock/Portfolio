@@ -11,8 +11,6 @@
 |
  */
 
-Auth::routes();
-
 Route::get('/test','HomeController@test');
 
 
@@ -26,6 +24,41 @@ Route::get('/', 'HomeController@index')->name('homepage');
 
 Route::get('/profile', 'HomeController@profile')->name('Profile');
 
+/*
+ *
+ *  Sessions Controller Routes
+ *
+ */
+
+Route::get('/register', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', 'SessionsController@store');
+Route::get('logout', 'SessionsController@destroy');
+
+/*
+ *
+ *  Projet Controller Routes
+ *
+ */ 
+
+Route::get('/projets/{projet}', 'ProjetController@show');
+
+Route::get('/projets', 'ProjetController@index');
+
+
+/*
+ *
+ *  Chapitre Controller Routes
+ *
+ */ 
+
+Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
+
+/*
+ *
+ *  Categorie Controller Routes
 /*
  *
  *  Projet Controller Routes
