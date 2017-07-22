@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
 			$table->string('email','30')->unique();
 			$table->string('password');
 			$table->longText('description')->nullable();
-			$table->string('region','20');
+			$table->string('region','20')->nullable();
 			$table->string('lien_github','100')->nullable();
 			$table->string('lien_linkedin','100')->nullable();
 			$table->string('lien_youtube','100')->nullable();

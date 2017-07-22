@@ -247,10 +247,6 @@ bt {
 	background-color: #073642;
 }
 
-.btn-primary{
-	background-color: #073642;
-}
-
-.img-responsive-centered {
-    margin: 0 auto;
+.button-primary{
+	background-color: #073641;
 }

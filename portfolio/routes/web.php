@@ -20,7 +20,7 @@ Route::get('/test','HomeController@test');
  *
  */
 
-Route::get('/', 'HomeController@index')->name('homepage');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'HomeController@profile')->name('Profile');
 
@@ -35,6 +35,7 @@ Route::post('/register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
+
 Route::get('logout', 'SessionsController@destroy');
 
 /*
@@ -97,3 +98,11 @@ Route::get('/categories', 'CategorieController@index');
  */ 
 
 Route::get('/blogs', 'BlogController@index');
+
+/*
+ *
+ *  Errors Controller Routes
+ *
+ */ 
+
+Route::get('/404', 'ErrorController@E404');

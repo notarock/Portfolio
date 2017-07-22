@@ -1,5 +1,9 @@
 		<!-- Static navbar -->
-		<div class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar navbar-inverse navbar-static-top"
+@if(Auth::check())
+style="background-color:#dc322f;"
+@endif
+>
 			<div class="container">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,7 +28,7 @@
 			<li><a href="/blogs">Blog</a></li>
 
 			<li><a href="/profile">À Propos</a></li>
-			
+
 			@if(Auth::check())
 			<li><a href="/logout">Logout</a></li>
 			@endif
