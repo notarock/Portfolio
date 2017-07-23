@@ -17,6 +17,7 @@ class CreateChapitresTable extends Migration
 			$table->increments('id');
 			$table->integer('projet_id');
 			$table->string('name');
+			$table->integer('position')->nullable();
 			$table->text('textUp');
 			$table->string('picture','100')->nullable();
 			$table->text('textDown');

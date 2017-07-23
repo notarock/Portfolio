@@ -4,12 +4,12 @@
 
 <div class="container pt">
         <div class="row mt">
-                <div class="col-lg-6 col-lg-offset-5 centered">
+                <div class="col-md-6 col-md-offset-5 centered">
                         <h1>Inscription</h1>
                 </div>
         </div>
         <div class="row mt">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-md-8 col-md-offset-2">
                         <form method="POST" action="/register">
                                 {{csrf_field()}}
 

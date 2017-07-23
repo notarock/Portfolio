@@ -21,6 +21,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 		'name' => "Roch D'Amour",
 		'photo' => 'user_placeholder.jpg',
 		'email' => 'roch@roch.com',
+		'admin' => 1,
 		'password' => $password ?: $password = bcrypt('secret'),
 		'description' => $faker->text,
 		'region' => 'Montreal',

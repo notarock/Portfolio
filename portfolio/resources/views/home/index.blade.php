@@ -5,7 +5,7 @@
 <div id="ww">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1 centered">
+			<div class="col-md-10 col-md-offset-1 centered">
 				<img src="/img/user.png" alt="Photo de profile">
 				<h1>Bienvenue sur mon site!</h1>
 			<p>Je suis Roch D'Amour, programmeur dans la région de Montréal et
@@ -25,15 +25,17 @@
 	</div> <!-- /container -->
 </div><!-- /ww -->
 
+</br>
+
 <div class="container">
-
-
-		<div class="col-lg-8 col-lg-offset-2 centered">
-			<img src="/img/work.png" alt="Outils">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 centered">
+			<span class="glyphicon glyphicon-pencil"></span>	
 			<h1>Projets Récents</h1>
 		</div>		
 
-	@include("projets.listes", ['lstProjets' => $lstProjets ])
+		@include("projets.listes", ['lstProjets' => $lstProjets ])
+	</div>
 </div>
 
 @endsection

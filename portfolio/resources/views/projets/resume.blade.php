@@ -1,5 +1,5 @@
 	
-	<div class="col-lg-8 col-lg-offset-2 centered"
+	<div class="col-md-8 col-md-offset-2 centered"
 
 		<p>
 			<bt>Créer par: <a href="/profile">Roch D'Amour</a>

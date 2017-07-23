@@ -11,7 +11,7 @@
 |
  */
 
-Route::get('/test','HomeController@test');
+Route::get('/test','HomeController@test')->name('Test route');
 
 
 /*
@@ -22,7 +22,7 @@ Route::get('/test','HomeController@test');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'HomeController@profile')->name('Profile');
+Route::get('/profile', 'HomeController@profile')->name('A propos');
 
 /*
  *
@@ -30,13 +30,13 @@ Route::get('/profile', 'HomeController@profile')->name('Profile');
  *
  */
 
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register', 'RegistrationController@store');
+Route::get('/register', 'RegistrationController@create')->name('Get Register');
+Route::post('/register', 'RegistrationController@store')->name('Save User');
 
-Route::get('/login', 'SessionsController@create');
-Route::post('/login', 'SessionsController@store');
+Route::get('/login', 'SessionsController@create')->name('Get Login');
+Route::post('/login', 'SessionsController@store')->name('Loging in');
 
-Route::get('logout', 'SessionsController@destroy');
+Route::get('logout', 'SessionsController@destroy')->name('Loging out');
 
 /*
  *
@@ -70,6 +70,8 @@ Route::get('/projets/{projet}', 'ProjetController@show');
 
 Route::get('/projets', 'ProjetController@index');
 
+Route::get('/projets/{projet}/delete', 'ProjetController@index');
+Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
 /*
  *
@@ -89,8 +91,6 @@ Route::get('/categories/{categorie}', 'CategorieController@show');
 
 Route::get('/categories', 'CategorieController@index');
 
-
-
 /*
  *
  *  Blog Controller Routes
@@ -105,4 +105,4 @@ Route::get('/blogs', 'BlogController@index');
  *
  */ 
 
-Route::get('/404', 'ErrorController@E404');
+Route::get('/404', 'ErrorController@E404')->name('Erreur 404');

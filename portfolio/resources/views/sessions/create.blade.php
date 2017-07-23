@@ -6,14 +6,14 @@
 
 <div class="container pt"> 
 	<div class="row mt">
-		<div class="col-lg-6 col-lg-offset-3 centered">
+		<div class="col-md-6 col-md-offset-3 centered">
 		<h1>Connection</h1>
 
 		</div>     
 	</div>
 
 	<div class="row mt">            
-		<div class="col-lg-6 col-lg-offset-3">
+		<div class="col-md-6 col-md-offset-3">
 			<form method="POST" action="/login">
 				{{csrf_field()}}
 				<div class="form-group">
@@ -36,5 +36,12 @@
 	</div><!-- /row -->
 </div><!-- /container -->  
 
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
 @endsection

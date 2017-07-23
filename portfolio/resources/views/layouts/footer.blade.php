@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-lg-3">
+			<div class="col-md-3">
 	
 				<a href="/profile">								
 					<img src="/img/user.png" alt="Photo de profile">
@@ -12,7 +12,7 @@
 
 			</div><!-- /col-lg-4 -->
 
-			<div class="col-lg-3">
+			<div class="col-md-3">
 				<h4>Autres sites</h4>
 
 				<p>
@@ -24,7 +24,7 @@
 
 			</div><!-- /col-lg-4 -->
 
-			<div class="col-lg-6"
+			<div class="col-md-6"
 >
 				<h4>Un site web? Mais pourquoi...</h4>
 

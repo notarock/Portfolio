@@ -7,7 +7,7 @@
 	<div id="ww">
 	    <div class="container">
 			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1 centered">
+				<div class="col-md-10 col-md-offset-1 centered">
 					<img src="/img/user.png" alt="Stanley">
 					<h1>{{$profile->name}}</h1>
 					<h4>À propos de moi</h4>					
@@ -77,3 +77,5 @@
 	</div><!-- /container -->
 
 @endsection
+
+		

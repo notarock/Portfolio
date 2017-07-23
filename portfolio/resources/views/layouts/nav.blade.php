@@ -1,6 +1,6 @@
 		<!-- Static navbar -->
 		<div class="navbar navbar-inverse navbar-static-top"
-@if(Auth::check())
+@if(Auth::user()->admin)
 style="background-color:#dc322f;"
 @endif
 >

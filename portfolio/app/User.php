@@ -33,7 +33,6 @@ class User extends Authenticatable
 		return $this->hasMany(Projet::class);
 	}
 
-
 	public static function liens()
 	{	
 		$user = User::first();
