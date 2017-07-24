@@ -30,7 +30,7 @@
 					<button type="submit" class="btn btn-primary">Login</button> 
 				</div>                    
 
-				@include('layouts.errors')
+				@include('errors.errors')
 			</form>
 		</div>     
 	</div><!-- /row -->

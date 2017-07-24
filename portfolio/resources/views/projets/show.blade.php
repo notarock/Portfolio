@@ -6,6 +6,7 @@
 
 	<div class="container pt">
 
+		@if(Auth::check())
 		@if(Auth::user()->admin)
 			<div class="col-md-8 col-md-offset-2 centered">
 				<div class="row">
@@ -20,7 +21,7 @@
 
 			<hr/>
 			</div>
-
+		@endif
 		@endif
 
 	@include('projets.details', ['projet' => $projet])

@@ -70,7 +70,7 @@ Route::get('/projets/{projet}', 'ProjetController@show');
 
 Route::get('/projets', 'ProjetController@index');
 
-Route::get('/projets/{projet}/delete', 'ProjetController@index');
+Route::get('/projets/{projet}/delete', 'ProjetController@delete');
 Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
 /*

@@ -1,8 +1,12 @@
 		<!-- Static navbar -->
 		<div class="navbar navbar-inverse navbar-static-top"
-@if(Auth::user()->admin)
-style="background-color:#dc322f;"
+
+@if(Auth::check())
+	@if(Auth::user()->admin)
+		style="background-color:#dc322f;"
+	@endif
 @endif
+
 >
 			<div class="container">
 	<div class="navbar-header">

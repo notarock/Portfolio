@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\User;
 use Closure;
-use Illuminate\Http\Response;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+ use Illuminate\Http\Response;
 
-class SoloAdmin
+class isAdmin
 {
 	/**
 	 * Handle an incoming request.
@@ -17,10 +18,11 @@ class SoloAdmin
 	 */
 	public function handle($request, Closure $next)
 	{
-		if(User::count() > 0){
-			return new Response(view('errors.404'));
-		}	    
-
+		if(Auth::check()){	
+			if(!Auth::user()->admin){
+				return new Response(view('errors.404'));
+			}
+		}
 		return $next($request);
 	}
 }

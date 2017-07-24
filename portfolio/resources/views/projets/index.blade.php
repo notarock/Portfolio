@@ -7,9 +7,10 @@
 <div id="ww">
 	<div class="container">
 		<div class="row">
-	
+
+			@if(Auth::check())
 			@if(Auth::user()->admin)
-			
+						
 			<div class="col-md-8 col-md-offset-2 centered">
 				
 				<div class="row">
@@ -21,6 +22,7 @@
 			<hr/>
 			</div>
 		
+			@endif
 			@endif
 
 			<div class="col-md-8 col-md-offset-2 centered">
