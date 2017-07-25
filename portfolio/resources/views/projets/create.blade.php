@@ -3,13 +3,13 @@
 
 @section('content')
 
-	<!-- +++++ Projects Section +++++ -->
+{{--	<!-- +++++ Projects Section +++++ -->
 
 	<div class="container pt">
 
 
 	<form method="POST" action="/projets">
-		{{csrf_token()}}
+
 		
 		@include('projets.editable')
 
@@ -26,7 +26,8 @@
 	</form>
 
 
-
 	</div><!-- /container -->
+
+--}}
 
 @endsection

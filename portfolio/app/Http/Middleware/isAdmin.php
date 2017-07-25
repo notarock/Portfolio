@@ -18,12 +18,13 @@ class isAdmin
 	 */
 	public function handle($request, Closure $next)
 	{
-
-		if(Auth::check()){	
-			if(!Auth::user()->admin){
-				return new Response(view('errors.404'));
-			}
+	
+		if(!Auth::check()){	
+			return new Response(view('errors.404'));
+		} else if(!Auth::user()->admin){
+			return new Response(view('errors.404'));
 		}
+	
 		return $next($request);
 	}
 }

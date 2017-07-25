@@ -73,6 +73,7 @@ Route::get('/projets', 'ProjetController@index');
 Route::get('/projets/{projet}/delete', 'ProjetController@delete');
 Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
+Route::get('/projets/create', 'ProjetController@create');
 /*
  *
  *  Chapitre Controller Routes
