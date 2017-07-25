@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Projet;
-
+use Session;
 class ProjetController extends Controller
 {
 
@@ -14,7 +14,8 @@ class ProjetController extends Controller
 	 */
 	public function __construct()
 	{
-		$this->middleware('isAdmin')->only('delete', 'destroy');
+		$this->middleware('isAdmin')->except('index', 'show');
+		
 	}	
 
 	/**
@@ -43,6 +44,19 @@ class ProjetController extends Controller
 	}
 
 	/**
+	 * Affiche la page pour créer un nouveau projet
+	 *
+	 * @return Formulaire de création d'un projet
+	 */
+	public function create()
+	{
+		dd('create methode');
+		return view('projets.create');
+	}
+
+
+
+	/**
 	 * Demande une confirmation avant de supprimer le projet
 	 *
 	 * @param  int  $id
@@ -58,14 +72,21 @@ class ProjetController extends Controller
 	 * Retire le projet de la base de données
 	 *
 	 * @param  int  $id
-	 * @return Response
+	 * @return Message de confirmation
 	 */
 	public function destroy(Projet $projet)
 	{
+		$nomProjet = $projet->name;
 
 		$projet->delete();
-		
-		return Redirect('/projets');
+
+		Session::flash('status', 'Le projet ' 
+			. $nomProjet .
+			' a été supprimé avec succès!');
+
+		return Redirect('/projets' );
+
 	}
+		
 
 }

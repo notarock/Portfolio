@@ -3,7 +3,7 @@
 
 @if(Auth::check())
 	@if(Auth::user()->admin)
-		style="background-color:#dc322f;"
+		style="background-color:black;"
 	@endif
 @endif
 
@@ -27,7 +27,7 @@
 
 			@endforeach
 
-			<li><a href="/categories">Catégories</a></li>					
+			<li><a href="/categories">Catégories</a></li>
 
 			<li><a href="/blogs">Blog</a></li>
 
@@ -38,5 +38,10 @@
 			@endif
 		</ul>
 	</div><!--/.nav-collapse -->
-		</div>
-	</div>
+		@if(Session::has('status'))
+			<div class="centered">			
+				<h3 class="alert alert-info">{{Session::get('status')}}</h3>
+			</div>
+		@endif
+	</div>	
+</div>

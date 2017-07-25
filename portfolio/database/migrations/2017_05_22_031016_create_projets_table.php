@@ -18,6 +18,7 @@ class CreateProjetsTable extends Migration
 			$table->integer('user_id');
 			$table->integer('cadre_id');
 			$table->integer('categorie_id');
+			$table->integer('etat_id')->default(4);
 			$table->string('name','100');
 			$table->longText('description')->nullable();
 			$table->string('picture','100')->nullable();
