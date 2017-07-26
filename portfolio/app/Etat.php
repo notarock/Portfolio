@@ -20,4 +20,12 @@ class Etat extends Model
 	{
 		return $this->belongsToMany(App\Projet::class);
 	}
+
+
+
+	public static function CBetats()
+	{
+		return Etat::OrderBy('name')->get();
+	}
+
 }

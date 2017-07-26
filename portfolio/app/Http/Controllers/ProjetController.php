@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Projet;
 use Session;
+
 class ProjetController extends Controller
 {
 
@@ -14,8 +15,7 @@ class ProjetController extends Controller
 	 */
 	public function __construct()
 	{
-		$this->middleware('isAdmin')->except('index', 'show');
-		
+		$this->middleware('isAdmin')->except('index', 'show');	
 	}	
 
 	/**
@@ -50,11 +50,8 @@ class ProjetController extends Controller
 	 */
 	public function create()
 	{
-		dd('create methode');
 		return view('projets.create');
 	}
-
-
 
 	/**
 	 * Demande une confirmation avant de supprimer le projet

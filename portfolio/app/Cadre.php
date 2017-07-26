@@ -12,4 +12,9 @@ class Cadre extends Model
 		return $this->hasMany(Projet::class);
 	}
 
+	public static function CBcadres()
+	{
+		return Cadre::OrderBy('name')->get();
+	}
+
 }

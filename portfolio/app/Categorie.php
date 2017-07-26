@@ -23,4 +23,9 @@ class Categorie extends Model
 			return $categorie->projets->count();
 		})->take(3);
 	}
+
+	public static function CBcategories()
+	{
+		return Categorie::OrderBy('name')->get();
+	}
 }

@@ -41,7 +41,7 @@ class HomeController extends Controller
 		return view('profiles.show', compact ('profile'));
 	}
 
-	public function test()
+	public function testy()
 	{
 
 		Session::flash('status', 'Testing 1 2 3');	

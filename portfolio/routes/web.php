@@ -44,41 +44,21 @@ Route::get('logout', 'SessionsController@destroy')->name('Loging out');
  *
  */ 
 
-Route::get('/projets/{projet}', 'ProjetController@show');
-
-Route::get('/projets', 'ProjetController@index');
-
-
-/*
- *
- *  Chapitre Controller Routes
- *
- */ 
-
-Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
-
-/*
- *
- *  Categorie Controller Routes
-/*
- *
- *  Projet Controller Routes
- *
- */ 
-
-Route::get('/projets/{projet}', 'ProjetController@show');
+Route::get('/projets/create', 'ProjetController@create');
 
 Route::get('/projets', 'ProjetController@index');
 
 Route::get('/projets/{projet}/delete', 'ProjetController@delete');
 Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
-Route::get('/projets/create', 'ProjetController@create');
+
+Route::get('/projets/{projet}', 'ProjetController@show');
+
 /*
  *
  *  Chapitre Controller Routes
  *
- */ 
+ */  
 
 Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
 
