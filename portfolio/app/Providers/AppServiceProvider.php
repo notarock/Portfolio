@@ -26,10 +26,8 @@ class AppServiceProvider extends ServiceProvider
 			$view->with('liens', User::liens());
 		});
 		view()->composer('projets.editable', function($view){
-			$view->with('CBcategories', Categorie::CBcategories ());
-			
-			$view->with('CBcadres', Cadre::BDcadres());
-			$view->with('CBetats', Etat::BDetats());
+			$view->with('CBcategories', Categorie::CBcategories());	
+			$view->with('CBetats', Etat::CBetats());
 		});
 	} 
 

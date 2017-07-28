@@ -45,6 +45,7 @@ Route::get('logout', 'SessionsController@destroy')->name('Loging out');
  */ 
 
 Route::get('/projets/create', 'ProjetController@create');
+Route::post('projets', 'ProjetController@store');
 
 Route::get('/projets', 'ProjetController@index');
 

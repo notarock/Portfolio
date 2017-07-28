@@ -38,8 +38,7 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker){
 
 	return [
 		'user_id' => 1,
-		'cadre_id' => rand(1,App\Cadre::count()),
-		'categorie_id' => rand(1,App\Cadre::count()),
+		'categorie_id' => rand(1,App\Categorie::count()),
 		'name' => $faker->sentence(rand(1,6)),
 		'description' => $faker->text,
 		'picture' => 'projet_placeholder.jpg',
@@ -51,15 +50,6 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker){
 
 
 
-/** Factory d'un Cadre*/
-$factory->define(App\Cadre::class, function(Faker\Generator $faker){
-
-	return [
-		'name' => $faker->colorName,
-		'description' => $faker->paragraph,
-	];
-
-});
 
 /** Factory d'une Categorie*/
 $factory->define(App\Categorie::class, function(Faker\Generator $faker){

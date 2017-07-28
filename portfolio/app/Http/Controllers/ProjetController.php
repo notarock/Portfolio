@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Projet;
 use Session;
 
@@ -53,6 +54,67 @@ class ProjetController extends Controller
 		return view('projets.create');
 	}
 
+	public function store(Request $request)
+	{
+/*
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'name'        	=> 'required|max:100',
+	    'categorie_id' 	=> 'required|numeric',
+	    'etat_id' 		=> 'required|numeric',
+        );
+        $errors = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($errors->fails()) {
+            return Redirect::to('/projets/create')
+                ->withErrors($errors); 
+        } else {
+            // store
+            $projet = new Projet;
+            $projet->       = Input::get('name');
+        
+            $projet->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created nerd!');
+            return Redirect::to('nerds');
+        }	
+
+
+*/
+
+
+
+
+		if ($request->hasFile('picture')) {
+			//Enregistre la photo
+			$destination = 'uploads/projets/'; // your upload folder
+			$picture     = $request->file('picture');
+			$filename    = $picture; // get the filename
+			$picture->move($destination, $filename); // move file to destination
+		}		
+
+		// créer le projet
+		$newProjet = 
+			new Projet([
+			'name'    	=> $request->name,
+			'description' 	=> $request->description,
+//			'picture' 	=> $destination . $filename,
+			'lien_github' 	=> $request->lien_github,
+			'categorie_id' 	=> $request->categorie_id,
+			'etat_id' 	=> $request->etat_id,
+			'user_id' 	=> Auth::user()->id,
+		]);
+
+		$projet->save();
+
+		return redirect('/projets/' . $newProjet->id);
+
+	}
+
+
 	/**
 	 * Demande une confirmation avant de supprimer le projet
 	 *
@@ -84,6 +146,6 @@ class ProjetController extends Controller
 		return Redirect('/projets' );
 
 	}
-		
+
 
 }

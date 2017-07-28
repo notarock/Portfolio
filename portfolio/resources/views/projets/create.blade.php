@@ -13,7 +13,9 @@
 
 
 	<form method="POST" action="/projets">
-				
+	
+		{{csrf_field()}}
+
 		@include('projets.editable')
 
 	</form>
