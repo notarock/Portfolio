@@ -1,9 +1,7 @@
 
 
 	@if($lstChapitres->count() === 0)
-	<div class="row mt centered">	
-		<h2>Rien à affiché.</h2>
-	</div>
+
 	@else
 
 	<div class="panel panel-primary">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use App\Projet;
 use Session;
@@ -10,8 +11,10 @@ use Session;
 class ProjetController extends Controller
 {
 
+
+
 	/**
-	 * Middleware pour les methodes du controller des Projets
+	 * Middleware pour les methodes du controller des Projets.
 	 *
 	 */
 	public function __construct()
@@ -19,10 +22,13 @@ class ProjetController extends Controller
 		$this->middleware('isAdmin')->except('index', 'show');	
 	}	
 
+
+
 	/**
 	 * Retourne la liste des projets 
 	 *
-	 * @return View qui affiche 9 projets paginé
+	 * @return View qui affiche la liste des projets paginés par tranche de 9. 
+	 *
 	 */
 	public function index()
 	{	
@@ -30,6 +36,8 @@ class ProjetController extends Controller
 		$lstProjets = Projet::orderBy('updated_at','DESC')->paginate(9);
 		return view('projets.index', compact('lstProjets'));
 	}	
+
+
 
 	/**
 	 * Montre un projet donnée
@@ -44,6 +52,8 @@ class ProjetController extends Controller
 
 	}
 
+
+
 	/**
 	 * Affiche la page pour créer un nouveau projet
 	 *
@@ -54,63 +64,43 @@ class ProjetController extends Controller
 		return view('projets.create');
 	}
 
+
+
 	public function store(Request $request)
 	{
-/*
-        // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'name'        	=> 'required|max:100',
-	    'categorie_id' 	=> 'required|numeric',
-	    'etat_id' 		=> 'required|numeric',
-        );
-        $errors = Validator::make(Input::all(), $rules);
 
-        // process the login
-        if ($errors->fails()) {
-            return Redirect::to('/projets/create')
-                ->withErrors($errors); 
-        } else {
-            // store
-            $projet = new Projet;
-            $projet->       = Input::get('name');
-        
-            $projet->save();
+		$this->validate($request, [
+			'name' => 'required|max:100',
+			'picture' => 'required',
+			'categorie_id' => 'required',
+			'etat_id' => 'required',
+		]);
 
-            // redirect
-            Session::flash('message', 'Successfully created nerd!');
-            return Redirect::to('nerds');
-        }	
-
-
-*/
-
-
-
+		$projet = new Projet;
 
 		if ($request->hasFile('picture')) {
-			//Enregistre la photo
-			$destination = 'uploads/projets/'; // your upload folder
-			$picture     = $request->file('picture');
-			$filename    = $picture; // get the filename
-			$picture->move($destination, $filename); // move file to destination
-		}		
+			$image      = $request->file('picture');
+			$fileName   = $request->file('picture')->getClientOriginalName();	
 
-		// créer le projet
-		$newProjet = 
-			new Projet([
-			'name'    	=> $request->name,
-			'description' 	=> $request->description,
-//			'picture' 	=> $destination . $filename,
-			'lien_github' 	=> $request->lien_github,
-			'categorie_id' 	=> $request->categorie_id,
-			'etat_id' 	=> $request->etat_id,
-			'user_id' 	=> Auth::user()->id,
-		]);
+			$image->move("img/projets/",$fileName);	
+			
+			$projet->picture = $fileName;
+		} 
+
+		
+
+		$projet->name = $request->name;
+		$projet->description = $request->description;
+		$projet->lien_github = $request->lien_github;
+		$projet->categorie_id = $request->categorie_id;
+		$projet->etat_id = $request->etat_id;
+		$projet->user_id = Auth::id();
+
+
 
 		$projet->save();
 
-		return redirect('/projets/' . $newProjet->id);
+		return redirect('/projets/' . $projet->id);
 
 	}
 
@@ -126,6 +116,8 @@ class ProjetController extends Controller
 
 		return view('projets.delete', compact('projet'));
 	}
+
+
 
 	/**
 	 * Retire le projet de la base de données

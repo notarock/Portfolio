@@ -9,20 +9,29 @@
 			</div>
 		</div>
 
-		<div class="col-md-9">
+		<div class="
+			@if($projet->chapitres->count() != 0)
+				col-md-9
+			@endif
+		">
 			<div class="row mt">
 				<div class="col-md-12 centered">
 					<p>
-					<img class="img-responsive" src="/img/projets/{{$projet->picture}}" alt="">
+					<img class="img-responsive img-responsive-centered" src="/img/projets/{{$projet->picture}}" alt="">
 					</p>
 					<p>{{$projet->description}}</p>
 				</div>
 			</div>
 		</div>
+	
+			
+	@if($projet->chapitres->count() != 0)
 
 	<div class="col-md-3">
 		@include('chapitres.listes', ['lstChapitres' => $projet->chapitres])
 	</div>
 
-	@include('projets.resume', ['projet' => $projet])
+	@endif
 
+	@include('projets.resume', ['projet' => $projet])
+	</div>

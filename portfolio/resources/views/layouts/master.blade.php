@@ -31,6 +31,7 @@
     @include('layouts.footer')
 
 </body>
+
 <!-- Bootstrap core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
 </html>

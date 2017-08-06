@@ -12,7 +12,7 @@
 				<hr>
 
 				<div class="row">
-					<img class="img-responsive col-md-4 col-md-offset-4" src="/img/categories/{{$categorie->picture}}" alt="">
+					<img class="img-responsive img-responsive-centered" src="/img/categories/{{$categorie->picture}}" alt="">
 				</div>
 				</br>
 				<p>{{$categorie->description}}</p>

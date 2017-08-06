@@ -12,7 +12,7 @@
 		<hr/>	
 
 
-	<form method="POST" action="/projets">
+	<form method="POST" action="/projets" enctype="multipart/form-data">
 	
 		{{csrf_field()}}
 

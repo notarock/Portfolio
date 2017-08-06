@@ -20,7 +20,7 @@ class CreateProjetsTable extends Migration
 			$table->integer('etat_id')->default(4);
 			$table->string('name','100');
 			$table->longText('description')->nullable();
-			$table->string('picture','100')->nullable();
+			$table->string('picture','100');
 			$table->string('lien_github')->nullable();
 
 			$table->timestamps();

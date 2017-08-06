@@ -212,7 +212,7 @@ bt {
 /* Effects also are controled by hover.zoom.js */
 .zoom { 
 	display:block; 
-	position:relative; 
+	position:relative;   
 	overflow:hidden; 
 	background:transparent url(../img/loader.gif) no-repeat center;
 }
@@ -252,5 +252,5 @@ bt {
 }
 
 .img-responsive-centered {
-    margin: 0 auto;
+    margin: auto;
 }
