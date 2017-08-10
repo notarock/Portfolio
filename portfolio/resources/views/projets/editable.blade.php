@@ -1,23 +1,23 @@
 
 	<div class="form-group">
 		<label for="name">Nom:</label>
-		<input id="name" required type="text" value="{{old('name')}}" class="form-control" placeholder="Entrer un nom" name="name">
+		<input id="name" required type="text" value="{{$projet->name or old('name')}}" class="form-control" placeholder="Entrer un nom" name="name">
 	</div>
 
 	<div class="form-group">
 		<label for="picture">Photo du projet</label>
-		<input id="picture" type="file" name="picture"  value="{{old('picture')}}">
-		<p class="help-block">Choisir une imag</p>
+		<input id="picture" type="file" name="picture"  value="{{$projet->picture or old('picture')}}">
+		<p class="help-block">Choisir une image</p>
 	</div>
 
 	<div class="form-group">
 		<label for="description">Description:</label>
-		<textarea id="description" class="form-control" placeholder="Description courte du projet..." name="description">{{old('description')}}</textarea>    
+		<textarea id="description" class="form-control" placeholder="Description courte du projet..." name="description">{{$projet->description or old('description')}}</textarea>    
 	</div>
 
 	<div class="form-group">
 		<label for="lien_github">Lien github:</label>
-		<input type="text" class="form-control" value="{{old('lien_github')}}" id="lien_github" placeholder="github.com/..." name="lien_github">
+		<input type="text" class="form-control" value="{{$projet->lien_github or old('lien_github')}}" id="lien_github" placeholder="github.com/..." name="lien_github">
 	</div>
 
 
@@ -25,15 +25,20 @@
 		<label for="categorie_id">Catégorie:</label>
 
 		<select id="categorie_id" required class="form-control" name="categorie_id">
-
+			{{-- Défini la selection du dropdown--}}
+		 	<?php $categorieSelected = old('categorie_id')?>	
 			<option value="">- Choisir une catégorie... -</option>
 
 			@foreach($CBcategories as $categorie)
 				<option value="{{$categorie->id}}" 
-					@if(old('categorie_id') == $categorie->id)
+			
+				@if($categorieSelected == $categorie->id)
 						selected
-					@endif
+				@endif
+			
 				>{{$categorie->name}}</option>
+			
+		
 			@endforeach
 		</select>
 
@@ -42,13 +47,16 @@
 
 	<div class="form-group">
 		<label for="etat_id">État:</label>
-		<select id="etat_id" class="form-control" name="etat_id" >
+			{{--   Défini la selection du dropdown --}}
+			<?php $etatSelected =old('etat_id') ?>
+
+			<select id="etat_id" class="form-control" name="etat_id" >
 
 			<option value="">- Dans quel etat est ce projet? -</option>
 
 			@foreach($CBetats as $etat)
 				<option value="{{$etat->id}}"	
-					@if(old('etat_id') == $etat->id)
+	    @if( $etatSelected == $etat->id)
 						selected
 					@endif
 				>{{$etat->name}}</option>

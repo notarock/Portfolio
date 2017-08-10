@@ -83,11 +83,11 @@ class ProjetController extends Controller
 			$fileName   = $request->file('picture')->getClientOriginalName();	
 
 			$image->move("img/projets/",$fileName);	
-			
+
 			$projet->picture = $fileName;
 		} 
 
-		
+
 
 		$projet->name = $request->name;
 		$projet->description = $request->description;
@@ -100,6 +100,7 @@ class ProjetController extends Controller
 
 		$projet->save();
 
+		Session::flash('status', 'Projet ' . $projet->name . ' a été créer!');
 		return redirect('/projets/' . $projet->id);
 
 	}
@@ -138,6 +139,62 @@ class ProjetController extends Controller
 		return Redirect('/projets' );
 
 	}
+
+
+
+	/**
+	 * Affiche la page qui permet de modifier le projet
+	 *
+	 * @param int $id
+	 */
+	public function edit(Projet $projet)
+	{
+
+		return view('projets.edit', compact('projet'));
+	}
+
+
+
+	/**
+	 * Enregistre les modifications effectués sur ce projet
+	 *
+	 * @param Projet: Projet modifié
+	 */
+	public function update(Projet $projet, Request $request)
+	{
+
+		$this->validate($request, [
+			'name' => 'required|max:100',
+			'picture' => 'required',
+			'categorie_id' => 'required',
+			'etat_id' => 'required',
+		]);
+
+		$projet = new Projet;
+
+		if ($request->hasFile('picture')) {
+			$image      = $request->file('picture');
+			$fileName   = $request->file('picture')->getClientOriginalName();	
+
+			$image->move("img/projets/",$fileName);	
+
+			$projet->picture = $fileName;
+		} 
+
+
+
+		$projet->name = $request->name;
+		$projet->description = $request->description;
+		$projet->lien_github = $request->lien_github;
+		$projet->categorie_id = $request->categorie_id;
+		$projet->etat_id = $request->etat_id;
+
+		$projet->save();
+
+		Session::flash('status', 'Projet '. $projet->name . ' modifié!');
+		return redirect('/projets/' . $projet->id);
+
+	}	
 
 
 }

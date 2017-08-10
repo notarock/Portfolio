@@ -52,6 +52,8 @@ Route::get('/projets', 'ProjetController@index');
 Route::get('/projets/{projet}/delete', 'ProjetController@delete');
 Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
+Route::get('/projets/{projet}/edit', 'ProjetController@edit');
+Route::patch('/projets/{projet}', 'ProjetController@update');
 
 Route::get('/projets/{projet}', 'ProjetController@show');
 
