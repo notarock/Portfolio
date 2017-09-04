@@ -22,23 +22,17 @@
 
 
 	<div class="form-group">
-		<label for="categorie_id">Catégorie:</label>
+		<label for="categorie_id">Catégorie: </label>
 
 		<select id="categorie_id" required class="form-control" name="categorie_id">
 			{{-- Défini la selection du dropdown--}}
-		 	<?php $categorieSelected = old('categorie_id')?>	
+		 	
 			<option value="">- Choisir une catégorie... -</option>
 
-			@foreach($CBcategories as $categorie)
-				<option value="{{$categorie->id}}" 
-			
-				@if($categorieSelected == $categorie->id)
-						selected
-				@endif
-			
-				>{{$categorie->name}}</option>
-			
-		
+			@foreach($CBcategories as $categorie)				
+
+				<option value="{{$categorie->id}}" {{ $categorie->id == $selectedCategorie  ? 'selected="selected"' : '' }} > {{$categorie->name}} </option>	
+
 			@endforeach
 		</select>
 
@@ -48,18 +42,16 @@
 	<div class="form-group">
 		<label for="etat_id">État:</label>
 			{{--   Défini la selection du dropdown --}}
-			<?php $etatSelected =old('etat_id') ?>
+		
 
 			<select id="etat_id" class="form-control" name="etat_id" >
 
 			<option value="">- Dans quel etat est ce projet? -</option>
 
 			@foreach($CBetats as $etat)
-				<option value="{{$etat->id}}"	
-	    @if( $etatSelected == $etat->id)
-						selected
-					@endif
-				>{{$etat->name}}</option>
+
+				<option value="{{$etat->id}}" {{ $etat->id == $selectedEtat ? 'selected="selected"' : '' }} > {{$etat->name}} </option>	
+			
 			@endforeach
 		</select>
 	</div>

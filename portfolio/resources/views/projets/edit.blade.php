@@ -13,11 +13,15 @@
 		<hr/>	
 
 
-		<form method="PATCH" action="/projets/{{$projet->id}}" enctype="multipart/form-data">
+		<form method="POST" action="/projets/{{$projet->id}}" enctype="multipart/form-data">
 	
 		{{csrf_field()}}
+		{{ method_field('PATCH') }}
 
-		@include('projets.editable', ['projet' => $projet])
+
+		@include('projets.editable', ['projet' => $projet,
+						'selectedEtat' => $selectedEtat,
+						'selectedCategorie' => $selectedCategorie])
 
 	</form>
 

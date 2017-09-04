@@ -47,13 +47,14 @@ Route::get('logout', 'SessionsController@destroy')->name('Loging out');
 Route::get('/projets/create', 'ProjetController@create');
 Route::post('projets', 'ProjetController@store');
 
+Route::patch('/projets/{projet}', 'ProjetController@update');
 Route::get('/projets', 'ProjetController@index');
 
 Route::get('/projets/{projet}/delete', 'ProjetController@delete');
 Route::post('/projets/{projet}/destroy', 'ProjetController@destroy');
 
 Route::get('/projets/{projet}/edit', 'ProjetController@edit');
-Route::patch('/projets/{projet}', 'ProjetController@update');
+
 
 Route::get('/projets/{projet}', 'ProjetController@show');
 

@@ -61,7 +61,10 @@ class ProjetController extends Controller
 	 */
 	public function create()
 	{
-		return view('projets.create');
+		$selectedEtat = 0;
+		$selectedCategorie = 0;
+
+		return view('projets.create', compact('selectedCategorie', 'selectedEtat'));
 	}
 
 
@@ -150,7 +153,10 @@ class ProjetController extends Controller
 	public function edit(Projet $projet)
 	{
 
-		return view('projets.edit', compact('projet'));
+		$selectedEtat = 	$projet->etat_id;
+		$selectedCategorie = 	$projet->categorie_id;
+
+		return view('projets.edit', compact('projet', 'selectedEtat', 'selectedCategorie'));
 	}
 
 
@@ -163,14 +169,13 @@ class ProjetController extends Controller
 	public function update(Projet $projet, Request $request)
 	{
 
+		
+
 		$this->validate($request, [
-			'name' => 'required|max:100',
-			'picture' => 'required',
+			'name' => 'required|max:100',	
 			'categorie_id' => 'required',
 			'etat_id' => 'required',
-		]);
-
-		$projet = new Projet;
+		]);	
 
 		if ($request->hasFile('picture')) {
 			$image      = $request->file('picture');
@@ -181,15 +186,13 @@ class ProjetController extends Controller
 			$projet->picture = $fileName;
 		} 
 
-
-
 		$projet->name = $request->name;
 		$projet->description = $request->description;
 		$projet->lien_github = $request->lien_github;
 		$projet->categorie_id = $request->categorie_id;
 		$projet->etat_id = $request->etat_id;
 
-		$projet->save();
+		$projet->update();
 
 		Session::flash('status', 'Projet '. $projet->name . ' modifié!');
 		return redirect('/projets/' . $projet->id);

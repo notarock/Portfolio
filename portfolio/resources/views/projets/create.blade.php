@@ -16,8 +16,8 @@
 	
 		{{csrf_field()}}
 
-		@include('projets.editable')
-
+		@include('projets.editable', ['selectedEtat' => $selectedEtat,
+						'selectedCategorie' => $selectedCategorie])
 	</form>
 
 
