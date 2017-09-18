@@ -6,6 +6,7 @@
 
 	<div class="form-group">
 		<label for="picture">Photo du projet</label>
+		<img class="img-responsive img-responsive-centere" style="width:40%; padding:15 0;" src="/img/projets/{{$projet->picture}}" alt="Image du projet">
 		<input id="picture" type="file" name="picture"  value="{{$projet->picture or old('picture')}}">
 		<p class="help-block">Choisir une image</p>
 	</div>

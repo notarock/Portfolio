@@ -68,7 +68,12 @@ class ProjetController extends Controller
 	}
 
 
-
+	/**
+	 * Enregistre le nouveau projet dans la base de données
+	 *
+	 * @return Page show du nouveau projet et status qui prouve que le projet
+	 *  a bien été créer
+	 */
 	public function store(Request $request)
 	{
 
@@ -90,16 +95,12 @@ class ProjetController extends Controller
 			$projet->picture = $fileName;
 		} 
 
-
-
 		$projet->name = $request->name;
 		$projet->description = $request->description;
 		$projet->lien_github = $request->lien_github;
 		$projet->categorie_id = $request->categorie_id;
 		$projet->etat_id = $request->etat_id;
 		$projet->user_id = Auth::id();
-
-
 
 		$projet->save();
 
@@ -169,7 +170,7 @@ class ProjetController extends Controller
 	public function update(Projet $projet, Request $request)
 	{
 
-		
+
 
 		$this->validate($request, [
 			'name' => 'required|max:100',	

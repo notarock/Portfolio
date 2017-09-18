@@ -6,6 +6,25 @@
 	<!-- +++++ Projects Section +++++ -->
 
 	<div class="container pt">
+
+		@if(Auth::check())
+		@if(Auth::user()->admin)
+			<div class="col-md-8 col-md-offset-2 centered">
+				<div class="row">
+					<a href='/categories/{{$categorie->id}}/edit'
+					class="col-md-4 col-md-offset-2 btn btn-warning">
+						<span style="color:black;">Éditer</span>
+					</a>
+					<a href='/categories/{{$categorie->id}}/delete' class="col-md-4 btn btn-danger">
+						<span style="color:black;">Supprimer</span>
+					</a>
+				</div>
+
+			<hr/>
+			</div>
+		@endif
+		@endif
+
 		<div class="row mt">
 			<div class="col-md-6 col-md-offset-3 centered">
 				<h3>{{$categorie->name}}</h3>

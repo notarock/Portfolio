@@ -72,9 +72,21 @@ Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
  *
  */ 
 
+
+Route::get('/categories/create', 'CategorieController@create');
+Route::post('categories', 'CategorieController@store');
+
+Route::patch('/categories/{categorie}', 'CategorieController@update');
+Route::get('/categories', 'CategorieController@index');
+
+Route::get('/categories/{categorie}/delete', 'CategorieController@delete');
+Route::post('/categories/{categorie}/destroy', 'CategorieController@destroy');
+
+Route::get('/categories/{categorie}/edit', 'CategorieController@edit');
+
 Route::get('/categories/{categorie}', 'CategorieController@show');
 
-Route::get('/categories', 'CategorieController@index');
+
 
 /*
  *

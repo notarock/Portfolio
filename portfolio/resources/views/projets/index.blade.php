@@ -15,7 +15,7 @@
 				
 				<div class="row">
 					<a href='/projets/create' class="col-md-4 col-md-offset-4 btn btn-success">
-						<span style="color:black;">Créer un projet</span>
+						<span style="color:black;">créer un projet</span>
 					</a>
 				</div>
 			
