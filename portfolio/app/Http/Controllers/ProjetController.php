@@ -64,7 +64,8 @@ class ProjetController extends Controller
 		$selectedEtat = 0;
 		$selectedCategorie = 0;
 
-		return view('projets.create', compact('selectedCategorie', 'selectedEtat'));
+		$projet = new Projet();
+		return view('projets.create',compact('projet', 'selectedCategorie', 'selectedEtat'));
 	}
 
 
@@ -162,7 +163,7 @@ class ProjetController extends Controller
 
 
 
-	/**
+	/*
 	 * Enregistre les modifications effectués sur ce projet
 	 *
 	 * @param Projet: Projet modifié

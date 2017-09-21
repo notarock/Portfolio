@@ -52,7 +52,10 @@ class CategorieController extends Controller
 	 */
 	public function create()
 	{
-		return view('categories.create');
+
+		$categorie = new Categorie();
+
+		return view('categories.create', compact('categorie'));
 	}
 
 
@@ -63,7 +66,7 @@ class CategorieController extends Controller
 	 *  a bien été créée
 	 */
 	public function store(Request $request)
-	{
+	{	
 
 		$this->validate($request, [
 			'name' => 'required|max:100',
@@ -91,6 +94,9 @@ class CategorieController extends Controller
 		return redirect('/categories/' . $projet->id);
 
 	}
+
+
+
 
 
 	/**

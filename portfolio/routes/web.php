@@ -77,6 +77,8 @@ Route::get('/categories/create', 'CategorieController@create');
 Route::post('categories', 'CategorieController@store');
 
 Route::patch('/categories/{categorie}', 'CategorieController@update');
+
+
 Route::get('/categories', 'CategorieController@index');
 
 Route::get('/categories/{categorie}/delete', 'CategorieController@delete');
