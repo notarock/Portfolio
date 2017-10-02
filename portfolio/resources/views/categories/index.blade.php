@@ -20,6 +20,7 @@
                             
                          <hr/>
                          </div>
+		</div>
 		 @endif
 		 @endif
 
@@ -34,7 +35,7 @@
 			<div class="row col-md-8 col-md-offset-2 centered">{{ $lstCategories->links() }}</div>
 
 
-
+		</div>
 	</div> <!-- /container -->
 </div><!-- /ww -->
 

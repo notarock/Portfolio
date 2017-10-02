@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categorie;
 use App\Projet;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class CategorieController extends Controller
 {
@@ -18,7 +21,6 @@ class CategorieController extends Controller
 		$this->middleware('isAdmin')->except('index', 'show');
 	}
 
-
 	/**
 	 * Affiche une catégorie sélectionnée ainsi que les projets de la catégorie
 	 *
@@ -31,6 +33,31 @@ class CategorieController extends Controller
 
 	}
 
+	public function update(Categorie $categorie, Request $request)
+	{
+
+		$this->validate($request, [
+			'name' => 'required|max:100',
+			'description' => 'required',
+		]);	
+
+		if ($request->hasFile('picture')) {
+			$image      = $request->file('picture');
+			$fileName   = $request->file('picture')->getClientOriginalName();	
+
+			$image->move("img/categories/",$fileName);	
+
+			$categorie->picture = $fileName;
+		} 
+
+		$categorie->name = $request->name;
+		$categorie->description = $request->description;
+
+		$categorie->update();
+
+		Session::flash('status', 'Categorie ' . $categorie->name . ' a été modifié!');
+		return redirect('/categories/' . $categorie->id);
+	}	
 
 	/**
 	 * Affiche la liste des catégories.
@@ -91,13 +118,9 @@ class CategorieController extends Controller
 		$categorie->save();
 
 		Session::flash('status', 'Categorie ' . $categorie->name . ' a été créer!');
-		return redirect('/categories/' . $projet->id);
+		return redirect('/categories/' . $categorie->id);
 
 	}
-
-
-
-
 
 	/**
 	 *
@@ -108,4 +131,23 @@ class CategorieController extends Controller
 
 	}
 
+
+	public function delete(Categorie $categorie)
+	{
+		return view('categories.delete', compact('categorie'));
+	}
+
+
+	public function destroy(Categorie $categorie)
+	{
+		$nomCategorie = $categorie->name;
+
+		$categorie->delete();
+
+		Session::flash('status', 'La catégorie ' 
+			. $nomCategorie .
+			' a été supprimée définitivement!');
+
+		return Redirect('/categories' );
+	}
 }

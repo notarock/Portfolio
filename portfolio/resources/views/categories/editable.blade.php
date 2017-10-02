@@ -7,7 +7,9 @@
 
 	<div class="form-group">
 		<label for="picture">Photo de la categorie</label>
+		@if(isset($categorie->picture))	
 		<img class="img-responsive img-responsive-centere" style="width:40%; padding:15 0;" src="/img/categories/{{$categorie->picture}}" alt="Image de la categorie">
+	@endif
 		<input id="picture" type="file" name="picture"  value="{{$categorie->picture or old('picture')}}">
 		<p class="help-block">Choisir une image</p>
 	</div>
@@ -26,4 +28,3 @@
 	</div>
 
 	@include('errors.errors')
-

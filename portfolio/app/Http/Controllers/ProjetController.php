@@ -171,8 +171,6 @@ class ProjetController extends Controller
 	public function update(Projet $projet, Request $request)
 	{
 
-
-
 		$this->validate($request, [
 			'name' => 'required|max:100',	
 			'categorie_id' => 'required',
