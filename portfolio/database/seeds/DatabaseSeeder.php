@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
 
 
 			$this->call(EtatSeeder::class);
+			$this->call(UserProd::class);
 		}
 	}
 }

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
 
-class UsersTableSeeder extends Seeder
+class UserProd extends Seeder
 {
 	/**
 	 * Run the database seeds.
@@ -15,7 +16,7 @@ class UsersTableSeeder extends Seeder
 		User::create([ 
 			'name' => getenv("USER_NAME"),
 			'photo' => getenv("USER_PHOTO"),
-			'email' => getenv("EMAIL"),
+			'email' => getenv("USER_EMAIL"),
 			'admin' => 1,
 			'password' => bcrypt(getenv("USER_PSWD")),
 			'region' => getenv("USER_REGION"),
@@ -23,6 +24,6 @@ class UsersTableSeeder extends Seeder
 			'lien_linkedin' => getenv('USER_LINKEDIN'),
 			'lien_youtube' => getenv('USER_YOUTUBE')
 		]);
-		
+
 	}
 }

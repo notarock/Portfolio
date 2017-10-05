@@ -18,19 +18,18 @@ class SessionsController extends Controller
 		return view('sessions.create');
 	}
 
-	public function store()
+	public function store(Request $request)
 	{
+
+
+		$credentials = ['email' => $request['email'], 'password' => bcrypt($request['password'])];
+
 		if(! auth()->attempt(request(['email','password'])))
 		{
-
-
-
 			return back()->witherrors([
 				'message' => 'Veuiller entre vos coordonnées et réessayé'
 			]);
-
 		}
-
 		return redirect('/');
 
 	}

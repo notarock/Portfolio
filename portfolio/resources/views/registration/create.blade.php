@@ -1,6 +1,6 @@
-@extends ('layouts.master')
 
-@section('content')
+
+
 
 <div class="container pt">
         <div class="row mt">
@@ -37,10 +37,10 @@
                                         <button type="submit" class="btn btn-primary">S'inscrire</button>
 				</div>
 
-                                @include('layouts.errors')
+                                @include('errors.errors')
                         </form>
                 </div>
         </div><!-- /row -->
 </div><!-- /container -->
 
-@endsection
+
