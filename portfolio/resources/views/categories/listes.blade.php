@@ -1,8 +1,10 @@
 
 	@if($lstCategories->isEmpty())
 
-	<div class="row mt centered">	
-		<h2>Il n'y a pas de catégories à affichée.</h2>
+	<div class="row mt centered">
+		<div class="col-md-8 col-md-offset-2">
+		<h2>Il n'y a pas de catégories ici pour le moment.</h2>	
+		</div>
 	</div><!-- /row -->
 
 	@else
@@ -17,7 +19,7 @@
 					<a href="/categories/{{$categorie->id}}" style="color:black;" >
 						<p>{{$categorie->name}} ({{$categorie->projets->count()}}) </p>
 					</a>				
-</div>
+				</div>
 
 				@endforeach
 

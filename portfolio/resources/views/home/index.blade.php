@@ -7,18 +7,16 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 centered">
 				<img src="/img/user.png" alt="Photo de profile">
-				<h1>Bienvenue sur mon site!</h1>
-			<p>Je suis Roch D'Amour, programmeur dans la région de Montréal et
-				 présentement étudiant en Génie Logiciel, à l'ETS.
+				<h1>Roch D'Amour</h1>
+			<p>Étudiant en Génie Logiciel à l'ETS, je suis fier de vous présenté mon site web.
+			C'est ici que se dresse la liste de tous mes projets, qu'ils soient en développement ou terminés. N'hésitez-pas à explorer, peut-être que vous y trouverez quelque choses d'intéressant!
 			</p>	
 
-			<p>Pour le moment, je me concentre sur la mise en ligne de ce site web.
-				 Mais à l'avenir, peut-être que je ferai
-				une chaine Youtube pour pouvoir expliquer 
-				en détails certaines choses vues ici.
+			<p>
+			Le site n'est peut-être pas parfait en ce moment, mais je travail fort pour qu'il soit bientôt présentable!. 
 			</p>
 
-			<h3>Et sur ce, je vous dis: Bonne Découverte!</h3>			
+			<h3></h3>			
 
 			</div><!-- /col-lg-8 -->
 		</div><!-- /row -->

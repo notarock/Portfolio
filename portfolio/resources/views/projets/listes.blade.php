@@ -1,9 +1,13 @@
  
 	@if($lstProjets->isEmpty())
 
+
 	<div class="row mt centered">	
-		<h2>Il n'y a pas de projets à montrés.</h2>
+		<div class="col-md-8 col-md-offset-2">
+		<h2>Il n'y a pas de projets ici pour le moment.</h2>
+		</div>
 	</div><!-- /row -->
+
 
 	@else
 

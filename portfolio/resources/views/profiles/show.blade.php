@@ -16,13 +16,10 @@
 				 et présentement étudiant en Génie Logiciel, à l'ETS.
 			</p>
 
-			<p>Dans mes temps libres, j'aime bien "gosser" sur mon ordinateur.
-				 Que ce soit sur un projet personnel, modification de mon bureau
-				 (Linux "Rice") ou simplement pour lire d'un sujet qui attire mon attention,
-				 j'ai toujours quelque chose en cours. Sur un coup de tête, j'ai décider de
-				 créer ce site web pour receuillir touts les trucs sur lesquels j'ais "gosser"
-				 dans mes temps libres. Peut-être qu'un jours, une personne tombera sur ce
-				 site et en apprendra quelque choses. Qui sait :)
+			<p>
+			On dit de moi que je suis un "patenteux": J'aime travail sur un projet personnel et réaliser des choses par moi même. C'est pour cette raison que
+			j'ai beaucoups d'interet pour le monde du open source: Il est possible de lire le code source d'un programme déjà contruit pour en apprendre son fonctionnement.	
+		
 			{{$profile->description}}
 			</p>
 				
@@ -43,9 +40,7 @@
 				<h4>LA VISION</h4>
 				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
 			</div>
-			-->
-
-			<h1>Pour le moment, je ne sais pas trop quoi écrir ici. Revenez voir plus tard!</h1>
+			-->	
 
 			<!--	
 			<div class="col-lg-6">

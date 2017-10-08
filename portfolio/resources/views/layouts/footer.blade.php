@@ -29,7 +29,7 @@
 				<h4>Un site web? Mais pourquoi...</h4>
 
 				<p>J'ai créer ce site afin de pouvoir documenter les projets que je réalise 
-					dans mes temps libres. Je pense qu'il est nécessaire d'être capable d'expliquer en détails un projet afin d'en maitriser tous les concepts.Ce site me permet donc de faire une synthèse sur mes projets, tout en maintenant un portfolio de mes projets personnels.</p> 
+					dans mes temps libres. Parmis ces projets, on peut y retrouver des sites web fait pour des proches, des projet d'apprentissage et des contributions à divers projets que j'ai trouvé interessant.</p> 
 			</div><!-- /col-lg-4 -->
 		</div>
 		
