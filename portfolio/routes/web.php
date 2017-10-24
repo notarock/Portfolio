@@ -66,6 +66,7 @@ Route::get('/projets/{projet}', 'ProjetController@show');
 
 Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
 
+
 /*
  *
  *  Categorie Controller Routes

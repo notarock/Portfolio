@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
 		User::create([ 
 			'name' => getenv("USER_NAME"),
 			'photo' => getenv("USER_PHOTO"),
-			'email' => getenv("EMAIL"),
+			'email' => getenv("USER_EMAIL"),
 			'admin' => 1,
 			'password' => bcrypt(getenv("USER_PSWD")),
 			'region' => getenv("USER_REGION"),
