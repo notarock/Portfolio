@@ -15,6 +15,11 @@ class Projet extends Model
 	{
 		return $this->hasMany(Chapitre::class);
 	}
+	
+	public function chapitresOrdered()
+	{
+		return $this->hasMany(Chapitre::class)->orderBy('position', 'asc');
+	}
 
 	public function cadre()
 	{

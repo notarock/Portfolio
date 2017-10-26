@@ -30,6 +30,7 @@ class ChapitreController extends Controller
 			'name' => 'required',
 			'textUp' => 'required',
 			'textDown' => 'required',
+			'position' => 'numeric',
 		]);	
 
 		if ($request->hasFile('picture')) {
@@ -44,6 +45,7 @@ class ChapitreController extends Controller
 		$chapitre->name = $request->name;
 		$chapitre->textUp = $request->textUp;
 		$chapitre->textDown = $request->textDown;
+		$chapitre->position = $request->position;
 
 		$chapitre->update();
 
@@ -68,12 +70,12 @@ class ChapitreController extends Controller
 	 * 
 	 * @return Formulaire de création d'une catégorie
 	 */
-	public function create()
+	public function create(Projet $projet)
 	{
 
 		$chapitre = new Chapitre();
 
-		return view('chapitres.create', compact('chapitre'));
+		return view('chapitres.create', compact('projet', 'chapitre'));
 	}
 
 
@@ -83,14 +85,15 @@ class ChapitreController extends Controller
 	 * @return Page show de la nouvelle chapitre et status qui prouve que la catégorie
 	 *  a bien été créée
 	 */
-	public function store(Request $request)
+	public function store(Request $request, Projet $projet)
 	{	
 
 		$this->validate($request, [
-			'name' => 'required|max:100',
-			'description' => 'required',
-			'picture' => 'required',	
-		]);
+			'name' => 'required',
+			'textUp' => 'required',
+			'textDown' => 'required',
+			'position' => 'numeric',
+		]);	
 
 		$chapitre = new Chapitre;
 
@@ -98,18 +101,21 @@ class ChapitreController extends Controller
 			$image      = $request->file('picture');
 			$fileName   = $request->file('picture')->getClientOriginalName();	
 
-			$image->move("img/chapitres/",$fileName);	
+			$image->move("img/chapitres/" . $chapitre->projet_id . "/",$fileName);	
 
 			$chapitre->picture = $fileName;
 		} 
 
 		$chapitre->name = $request->name;
-		$chapitre->description = $request->description;
+		$chapitre->textUp = $request->textUp;
+		$chapitre->textDown = $request->textDown;
+		$chapitre->position = $request->position;
+		$chapitre->projet_id = $projet->id;
 
 		$chapitre->save();
 
-		Session::flash('status', 'Chapitre ' . $chapitre->name . ' a été créer!');
-		return redirect('/chapitres/' . $chapitre->id);
+		Session::flash('status', 'Chapitre ' . $chapitre->name . ' a été enregistré!');
+		return redirect('/projets/' . $projet->id . "/chapitres/" . $chapitre->id);
 
 	}
 
@@ -124,23 +130,24 @@ class ChapitreController extends Controller
 	}
 
 
-	public function delete(Chapitre $chapitre)
+	public function delete(Projet $projet, Chapitre $chapitre)
 	{
+	
 		return view('chapitres.delete', compact('chapitre'));
 	}
 
 
-	public function destroy(Chapitre $chapitre)
+	public function destroy(Projet $projet, Chapitre $chapitre)
 	{
 		$nomChapitre = $chapitre->name;
 
 		$chapitre->delete();
 
-		Session::flash('status', 'La catégorie ' 
+		Session::flash('status', 'Le chapitre ' 
 			. $nomChapitre .
 			' a été supprimée définitivement!');
 
-		return Redirect('/chapitres' );
+		return Redirect('/projets/'. $projet->id );
 	}
 }
 

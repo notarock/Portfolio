@@ -91,7 +91,8 @@ class ProjetController extends Controller
 			$image      = $request->file('picture');
 			$fileName   = $request->file('picture')->getClientOriginalName();	
 
-			$image->move("img/projets/",$fileName);	
+			$image->resize(620,340)->move("img/projets/",$fileName);	
+			
 
 			$projet->picture = $fileName;
 		} 
@@ -134,6 +135,8 @@ class ProjetController extends Controller
 	public function destroy(Projet $projet)
 	{
 		$nomProjet = $projet->name;
+
+		$projet->chapitres()->delete();
 
 		$projet->delete();
 
