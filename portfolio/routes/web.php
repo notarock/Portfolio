@@ -64,7 +64,28 @@ Route::get('/projets/{projet}', 'ProjetController@show');
  *
  */  
 
-Route::get('/projets/{projet}/chapitres/{id}', 'ChapitreController@show');
+
+
+
+
+
+Route::get('/projets/{projet}/chapitres/create', 'ChapitreController@create');
+Route::post('/projets/{projet}/chapitres', 'ChapitreController@store');
+
+Route::patch('/projets/{projet}/chapitres/{chapitre}', 'ChapitreController@update');
+
+Route::get('/projets/{projet}/chapitres', 'ChapitreController@index');
+
+Route::get('/projets/{projet}/chapitres/{chapitre}/delete', 'ChapitreController@delete');
+Route::post('/projets/{projet}/chapitres/{chapitre}/destroy', 'ChapitreController@destroy');
+
+Route::get('/projets/{projet}/chapitres/{chapitre}/edit', 'ChapitreController@edit');
+
+Route::get('/projets/{projet}/chapitres/{chapitre}', 'ChapitreController@show');
+
+
+
+
 
 
 /*

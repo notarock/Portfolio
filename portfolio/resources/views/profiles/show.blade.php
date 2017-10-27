@@ -17,7 +17,7 @@
 			</p>
 
 			<p>
-			On dit de moi que je suis un "patenteux": J'aime travail sur un projet personnel et réaliser des choses par moi même. C'est pour cette raison que
+			On dit de moi que je suis un "patenteux": J'aime travailler sur un projet personnel et réaliser des choses par moi même. C'est pour cette raison que
 			j'ai beaucoups d'interet pour le monde du open source: Il est possible de lire le code source d'un programme déjà contruit pour en apprendre son fonctionnement.	
 		
 			{{$profile->description}}
