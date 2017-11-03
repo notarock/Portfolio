@@ -87,15 +87,16 @@ class ProjetController extends Controller
 
 		$projet = new Projet;
 
+
 		if ($request->hasFile('picture')) {
 			$image      = $request->file('picture');
 			$fileName   = $request->file('picture')->getClientOriginalName();	
 
-			$image->resize(620,340)->move("img/projets/",$fileName);	
-			
+			$image->move("img/projets/",$fileName);	
 
 			$projet->picture = $fileName;
 		} 
+
 
 		$projet->name = $request->name;
 		$projet->description = $request->description;
