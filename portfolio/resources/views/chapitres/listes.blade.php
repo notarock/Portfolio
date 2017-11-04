@@ -2,6 +2,17 @@
 
 @if($lstChapitres->count() === 0)
 
+
+		@if(auth::check())
+			@if(auth::user()->admin)
+
+
+				<a href='/projets/{{$projet->id}}/chapitres/create' class="col-md-4 col-md-offset-4 btn-success">
+					<span style="color:black;">Ajouter un Chapitre</span>
+				</a>	
+			@endif
+		@endif
+
 @else
 
 	<div class="panel panel-primary">
@@ -18,12 +29,12 @@
 
 		@endforeach
 
-		@if(Auth::check())
-			@if(Auth::user()->admin)
+		@if(auth::check())
+			@if(auth::user()->admin)
 
 
 				<a href='/projets/{{$lstChapitres->first()->projet->id}}}/chapitres/create' class="panel-body col-md-4 btn-success">
-					<span style="color:black;">Ajouter un chapitre</span>
+					<span style="color:black;">ajouter un chapitre</span>
 				</a>	
 			@endif
 		@endif
