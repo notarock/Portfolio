@@ -9,7 +9,12 @@ class BlogController extends Controller
 	
 	public function index()
 	{
-		return view('blogs.index');
+        $blogs = App\Blog::archives();
+
+		return view('blogs.index', compact('blogs'));
+
 	}
+
+
 
 }
