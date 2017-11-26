@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 			$this->call(ProjetsTableSeeder::class);
 			$this->call(ChapitresTableSeeder::class);
 			$this->call(EtatSeeder::class);
-
+            $this->call(BlogSeeder::class);
 		}		
 
 

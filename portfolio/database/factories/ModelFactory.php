@@ -15,35 +15,35 @@
 /** Factory d'un User */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
 
-	static $password;
+    static $password;
 
-	return [
-		'name' => "Roch D'Amour",
-		'photo' => 'user_placeholder.jpg',
-		'email' => 'roch@roch.com',
-		'admin' => 1,
-		'password' => $password ?: $password = bcrypt('secret'),
-		'description' => $faker->text,
-		'region' => 'Montreal',
-		'lien_github' => "https://github.com/",
-		'lien_linkedin' => "https://linkedin.com/",
-		'lien_youtube' =>  "https://youtube.com/",
-		'remember_token' => str_random(10),
-	];
+    return [
+        'name' => "Roch D'Amour",
+        'photo' => 'user_placeholder.jpg',
+        'email' => 'roch@roch.com',
+        'admin' => 1,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'description' => $faker->text,
+        'region' => 'Montreal',
+        'lien_github' => "https://github.com/",
+        'lien_linkedin' => "https://linkedin.com/",
+        'lien_youtube' =>  "https://youtube.com/",
+        'remember_token' => str_random(10),
+    ];
 
 });
 
 /** Factory d'un Projet */
 $factory->define(App\Projet::class, function (Faker\Generator $faker){
 
-	return [
-		'user_id' => 1,
-		'categorie_id' => rand(1,App\Categorie::count()),
-		'name' => $faker->sentence(rand(1,6)),
-		'description' => $faker->text,
-		'picture' => 'projet_placeholder.jpg',
-		'lien_github' => $faker->domainName,
-	];
+    return [
+        'user_id' => 1,
+        'categorie_id' => rand(1,App\Categorie::count()),
+        'name' => $faker->sentence(rand(1,6)),
+        'description' => $faker->text,
+        'picture' => 'projet_placeholder.jpg',
+        'lien_github' => $faker->domainName,
+    ];
 
 });
 
@@ -54,23 +54,35 @@ $factory->define(App\Projet::class, function (Faker\Generator $faker){
 /** Factory d'une Categorie*/
 $factory->define(App\Categorie::class, function(Faker\Generator $faker){
 
-	return [
-		'name' => $faker->colorName,
-		'description' => $faker->paragraph,
-		'picture' => 'categorie_placeholder.jpg',
-	];
+    return [
+        'name' => $faker->colorName,
+        'description' => $faker->paragraph,
+        'picture' => 'categorie_placeholder.jpg',
+    ];
 
 });
 
 /** Factory d'un Chapitre*/
 $factory->define(App\Chapitre::class, function(Faker\Generator $faker){
 
-	return [
-		'projet_id' => rand(1,App\Projet::count()),
-		'name'   =>    $faker->sentence,
-		'textUp' => $faker->paragraph,
-		'picture' => 'chapitre_placeholder.jpg',
-		'textDown' => $faker->paragraph,
-	];
+    return [
+        'projet_id' => rand(1,App\Projet::count()),
+        'name'   =>    $faker->sentence,
+        'textUp' => $faker->paragraph,
+        'picture' => 'chapitre_placeholder.jpg',
+        'textDown' => $faker->paragraph,
+    ];
+
+});
+
+
+/** FActory des blogs post*/
+$factory->define(App\Blog::class, function(Faker\Generator $faker){
+
+    return [
+        'title' => $faker->word,
+        'body' => $faker->paragraph(10), 
+        'picture' => "null",
+    ];
 
 });

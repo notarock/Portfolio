@@ -1,31 +1,33 @@
-	@if($lstProjets->isEmpty())
+@if($lstBlog->isEmpty())
 
 
-	<div class="row mt centered">	
-		<div class="col-md-8 col-md-offset-2">
-		<h2>Il n'y a pas de projets ici pour le moment.</h2>
-		</div>
-	</div><!-- /row -->
+    <div class="row mt centered">	
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Il n'y a pas de blog ici pour le moment.</h2>
+        </div>
+    </div><!-- /row -->
 
 
-	@else
+@else
 
-		@foreach($lstProjets->chunk(3) as $ligne)
-			<div class="row mt centered">	
+    @foreach($lstBlog as $blog)
+        <div class="row">
+            <a href="/blogs/{{$blog->id}}">
+                <h2>{{$blog->title}}</h2> 
+            </a>
+            <p> {{$blog->updated_at->diffForHumans()}} <p>
+        </div>
 
-				@foreach($ligne as $projet)
+        <div class="row">
+            {{$blog->body }}
+            <a href="/blogs/{{$blog->id}}">
+                lire la suite
+            </a>
+            </p>
+            </br>
 
-				<div class="col-md-4">
-					<a class="zoom black" href="/projets/{{$projet->id}}">
-						<img class="img-responsive img-responsive-centered" src="/img/projets/{{ $projet->picture }}" alt="" /></a>
-					<a href="/projets/{{$projet->id}}">
-						<p style="color:black;">{{$projet->name}}</p>
-					</a>
-				</div>
+        </div>
+    @endforeach
 
-				@endforeach
-
-			</div>	
-		@endforeach
-	@endif
+@endif
 

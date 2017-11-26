@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Projet;
 use App\User;
+use App\Blog;
 use Session;
 
 class HomeController extends Controller
@@ -30,7 +31,13 @@ class HomeController extends Controller
 
 		$lstProjets = Projet::orderBy('updated_at','DESC')->take(3)->get();
 
-		return view('home.index', compact('lstProjets'));
+        $lstBlog = Blog::orderBy('created_at', 'DESC')->get()->take(3);
+        foreach($lstBlog as $blog)
+        {
+            $blog->body = substr($blog->body, 0, 350) . '...';
+        }
+
+		return view('home.index', compact('lstProjets'), compact('lstBlog'));
 	}
 
 

@@ -119,6 +119,7 @@ Route::get('/categories/{categorie}', 'CategorieController@show');
 
 Route::get('/blogs', 'BlogController@index');
 
+Route::get('/blogs/{blog}', 'BlogController@show');
 /*
  *
  *  Errors Controller Routes
