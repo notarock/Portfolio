@@ -120,6 +120,17 @@ Route::get('/categories/{categorie}', 'CategorieController@show');
 Route::get('/blogs', 'BlogController@index');
 
 Route::get('/blogs/{blog}', 'BlogController@show');
+
+Route::patch('/blog/{blog}', 'CategorieController@update');
+
+Route::get('/blogs', 'BlogController@index');
+
+Route::get('/blogs/{blog}/delete', 'BlogController@delete');
+Route::post('/blogs/{blog}/destroy', 'BlogController@destroy');
+
+Route::get('/blogs/{blog}/edit', 'BlogController@edit');
+
+Route::get('/blogs/{blog}', 'BlogController@show');
 /*
  *
  *  Errors Controller Routes
