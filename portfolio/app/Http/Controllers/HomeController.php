@@ -28,7 +28,7 @@ class HomeController extends Controller
 	public function index()
 	{
 
-		$lstProjets = Projet::orderBy('updated_at','DESC')->take(3)->get();
+		$lstProjets = Projet::orderBy('updated_at','DESC')->take(4)->get();
 
 		return view('home.index', compact('lstProjets'));
 	}
@@ -44,7 +44,7 @@ class HomeController extends Controller
 	public function testy()
 	{
 
-		Session::flash('status', 'Testing 1 2 3');	
+		Session::flash('status', 'Testing 1 2 3');
 
 		return redirect('/');
 	}

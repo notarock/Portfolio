@@ -4940,6 +4940,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .pagination > li > a,
 .pagination > li > span {
+    color: #282828;
   position: relative;
   float: left;
   padding: 6px 12px;
@@ -4977,10 +4978,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 2;
-  color: #ffffff;
+  color: #ebdbb2;
   cursor: default;
-  background-color: #002b36;
-  border-color: #002b36;
+  background-color: #282828;
+  border-color: #83a598;
 }
 
 .pagination > .disabled > span,

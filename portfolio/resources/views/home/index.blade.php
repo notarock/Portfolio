@@ -12,15 +12,13 @@
 
 </br>
 
-<div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 centered">
+        <div class="centered">
             <span class="glyphicon glyphicon-pencil"></span>
             <h1>Projets Récents</h1>
         </div>
 
         @include("projets.listes", ['lstProjets' => $lstProjets ])
     </div>
-</div>
 
 @endsection
