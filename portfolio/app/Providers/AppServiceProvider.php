@@ -19,17 +19,14 @@ class AppServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		Carbon::setLocale('fr');
-		view()->composer('layouts.nav', function ($view){
-			$view->with('DDcategories',Categorie::DDcategories());
-		});
 		view()->composer('layouts.footer', function($view){
 			$view->with('liens', User::liens());
 		});
 		view()->composer('projets.editable', function($view){
-			$view->with('CBcategories', Categorie::CBcategories());	
+			$view->with('CBcategories', Categorie::CBcategories());
 			$view->with('CBetats', Etat::CBetats());
 		});
-	} 
+	}
 
 	/**
 	 * Register any application services.
