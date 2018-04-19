@@ -137,3 +137,7 @@ bt {
     color: #282828;
     font-size: 22px;
 }
+
+.col-md-6 {
+    padding:50px;
+}
