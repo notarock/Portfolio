@@ -13,7 +13,7 @@
             @foreach($ligne as $categorie)
                 <div class="col-md-6 centered">
                     <a href="/categories/{{$categorie->id}}">
-                        <img class="img-responsive" src="/img/categories/{{ $categorie->picture }}" alt="" /></a>
+                        <img class="list-image img-responsive" src="/img/categories/{{ $categorie->picture }}" alt="" /></a>
                         <a href="/categories/{{$categorie->id}}" style="color:black;" >
                             <p>{{$categorie->name}} ({{$categorie->projets->count()}}) </p>
                         </a>

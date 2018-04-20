@@ -13,7 +13,7 @@
         @foreach($ligne as $projet)
             <div class="col-md-6 centered">
                 <a href="/projets/{{$projet->id}}">
-                    <img class="img-responsive" src="/img/projets/{{ $projet->picture }}" alt="" />
+                    <img class="list-image img-responsive" src="/img/projets/{{ $projet->picture }}" alt="" />
                 </a>
                 <a href="/projets/{{$projet->id}}">
                     <p style="color:black;">{{$projet->name}}</p>

@@ -14,7 +14,7 @@ body {
 .term_block {
     margin:30px 0px;
     background: #282828;
-    color: #ebdbb2;
+    color: #ebdbb2 !important;
 }
 
 /* Titles */
@@ -140,4 +140,13 @@ bt {
 
 .col-md-6 {
     padding:50px;
+}
+
+.panel {
+    margin:15px;
+}
+
+.list-image {
+    max-height: 425px;
+    margin: 0 auto;
 }
