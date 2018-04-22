@@ -11,7 +11,7 @@
     @foreach($lstCategories->chunk(2) as $ligne)
         <div class="row centered">
             @foreach($ligne as $categorie)
-                <div class="col-md-6 centered">
+                <div class="col-md-6 tile-list centered">
                     <a href="/categories/{{$categorie->id}}">
                         <img class="list-image img-responsive" src="/img/categories/{{ $categorie->picture }}" alt="" /></a>
                         <a href="/categories/{{$categorie->id}}" style="color:black;" >

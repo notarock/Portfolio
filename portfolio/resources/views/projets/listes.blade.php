@@ -11,7 +11,7 @@
 
     @foreach($lstProjets->chunk(2) as $ligne)
         @foreach($ligne as $projet)
-            <div class="col-md-6 centered">
+            <div class="col-md-6 tile-list centered">
                 <a href="/projets/{{$projet->id}}">
                     <img class="list-image img-responsive" src="/img/projets/{{ $projet->picture }}" alt="" />
                 </a>
