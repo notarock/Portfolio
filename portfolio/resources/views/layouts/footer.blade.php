@@ -30,5 +30,7 @@
                     dans mes temps libres. Parmis ces projets, on peut y retrouver des sites web fait pour des proches, des projet d'apprentissage et des contributions à divers projets que j'ai trouvé interessant.</p>
             </div><!-- /col-lg-4 -->
         </div>
-    </div>
+        <div class="row">
+            <img src="https://static.fsf.org/nosvn/associate/crm/2291295.png">
+        </div>
 </div>
