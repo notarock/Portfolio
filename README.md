@@ -1,3 +1,5 @@
 # Portfolio
 
-Site web pour afficher mes projets et contributions. [portfolio](https://rochdamour.ca)
+Site web pour afficher mes projets et contributions. 
+
+Lien: [Portfolio](https://rochdamour.ca)
